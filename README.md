@@ -2,7 +2,7 @@
 
 Python code and generated results accompanying *Self-Healing Composite Materials for Aerospace Structures: Mechanisms, Space-Environment Constraints, and a Computational Assessment of Damage Recovery*.
 
-This exploratory model implements manuscript Sections 5.2–5.8. All numerical inputs are assumed rather than experimentally measured. Environmental factors E = 1 and E = 0.5 are illustrative settings, not aircraft or spacecraft calibrations. All strengths are normalized by the initial strength of the non-healing reference.
+This exploratory model implements manuscript Sections 5.2–5.9. All numerical inputs are assumed rather than experimentally measured. Environmental factors E = 1 and E = 0.5 are illustrative settings, not aircraft or spacecraft calibrations. All strengths are normalized by the initial strength of the non-healing reference.
 
 ## Installation and running
 
@@ -20,6 +20,7 @@ To run the scripts separately:
 ```bash
 python simulation.py
 python robustness.py
+python horizon_analysis.py
 ```
 
 The scripts regenerate data and figures in `results/`, overwriting existing generated files. Calculations use the Python standard library; Matplotlib generates the figures. MATLAB is not required.
@@ -67,6 +68,8 @@ Break-even calculations determine:
 
 Environmental thresholds use 60 bisection iterations. All other inputs remain at baseline. These thresholds are model comparisons, not acceptable design penalties or aerospace qualification criteria.
 
+The horizon analysis compares break-even initial penalties at 10, 50 and 100 cycles for E = 1, holding the remaining damage and healing inputs at baseline. It also evaluates the finite long-term penalty limit for declining availability. Results and settings are saved in horizon_summary.csv and horizon_settings.json. These thresholds describe equality with the damaged reference, not acceptable design penalties.
+
 The selected ranges are exploratory. These analyses do not establish statistical uncertainty or a universal ranking of parameter importance.
 
 ## Generated files
@@ -81,6 +84,8 @@ All outputs are stored in `results/`.
 | `settings.json` | Baseline and sensitivity settings |
 | `joint_sensitivity.csv` | Joint E/q results |
 | `break_even.json` | Break-even thresholds |
+| `horizon_summary.csv` | Equality penalties at 10, 50 and 100 cycles |
+| `horizon_settings.json` | Horizon-analysis settings and declining-availability limit |
 | `strength_trajectories.png` / `.svg` | Baseline trajectory figure |
 | `sensitivity.png` / `.svg` | One-at-a-time sensitivity figure |
 
