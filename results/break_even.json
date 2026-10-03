@@ -1,0 +1,12 @@
+{
+  "sustained": {
+    "minimum_E_for_break_even_at_cycle_50": 0.05531113889442807,
+    "maximum_penalty_at_E1": 0.6012143851056031,
+    "maximum_penalty_at_E05": 0.3698381272039343
+  },
+  "declining": {
+    "minimum_E_for_break_even_at_cycle_50": 0.14984263577147738,
+    "maximum_penalty_at_E1": 0.2888247842871545,
+    "maximum_penalty_at_E05": 0.1570533047903715
+  }
+}
