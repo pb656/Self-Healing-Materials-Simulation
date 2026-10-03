@@ -6,10 +6,10 @@ This exploratory model implements manuscript Sections 5.2–5.8. All numerical i
 
 ## Installation and running
 
-Python 3 and Matplotlib are required. From the repository folder, run:
+Python 3 and Matplotlib 3.11.2 are required. From the repository folder, run:
 
 ```bash
-python -m pip install -r requirements.txt
+python -m pip install matplotlib==3.11.2
 python run_all.py
 ```
 
